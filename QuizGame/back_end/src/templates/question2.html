@@ -1,0 +1,61 @@
+{% extends "index_layout.html" %}
+{% block index %}
+<main class="total_background_question">
+  <div class="video-container">
+      <div class="player_info">
+        <div class="player_info-container">
+
+            <ul class="ul_info">
+                <li class="info">Player name: {{ player[1] }}</li>
+                <li class="info">Score: {{ quiz_session[3] }}</li>
+                <li class="info">Chances: {{ quiz_session[4] }}/3</li>
+            </ul>
+        </div>
+        <div class="log-out-container-home">
+            <p class="logout-button">
+              <a href="{{ url_for("logout") }}">Log Out</a>
+          
+            </p>
+      
+          </div>
+        
+      </div>
+      <video autoplay muted loop id="background-video">
+          <source src="https://cdn.pixabay.com/vimeo/443041055/tuyet-45338.mp4?width=640&hash=2d698453e2266e47f97ac30ec367cb13118e7e4f"
+                  type="video/mp4">
+      </video>
+      <div class="quiz-container">
+        
+          <form action="#" method="post">
+
+            <div class="question">
+                <div class="question_here">{{question[0][1]}}</div>
+                <div class="answer-options">
+                  {% for option in options_of_question %}
+                  <div class="option">
+                    <input type="radio" id="option{{ loop.index0 }}" name="option_id" value="{{option[0]}}">
+                    <label for="option{{ loop.index0 }}">{{option[2]}} </label>
+  
+                  </div>
+                  {% endfor %}
+                    <!-- <label>
+                        <input type="radio" name="answer" value="A"> A. ???
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="B"> B. ???
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="C"> C. ???
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="D"> D. ???
+                    </label> -->
+                </div>
+                <button class="check-answer">Check Answer</button>
+            </div>
+          </form>
+      </div>
+
+  </div>
+</main>
+{% endblock %}

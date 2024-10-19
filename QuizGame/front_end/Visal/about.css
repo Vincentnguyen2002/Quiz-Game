@@ -1,0 +1,65 @@
+body,html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  background-image: url("photos/background2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Use 'cover' to fill the entire background */
+  background-position: center; /* Optional: Center the background image */
+}
+
+
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the header */
+.header {
+  background-color: ghostwhite;
+  padding: 10px;
+}
+
+/* Style for the header content */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  align-content: center;
+}
+
+/* Style for the logo */
+header img {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+/* Style for the navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #0056b3;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+/* Style for the logout button */
+.logout img {
+  height: 40px; /* Adjust height as needed */
+}
+

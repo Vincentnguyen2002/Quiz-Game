@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Map</title>
+  <link rel="stylesheet" href="play.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="stats-placeholder">
+      <!-- Player's stats fetched from the database -->
+      <p>Player Name: <span id="playerNamePlaceholder">Loading...</span></p>
+      <p>Score: <span id="scorePlaceholder">Loading...</span></p>
+      <!-- Add other stats here -->
+    </div>
+      <h1>Select Country</h1>
+      <nav>
+          <ul>
+              <li class="logout"><a href="home.html"><img src="photos/logout.png" alt="logout" height="500"></a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <a class="marker dropped-pin saudi-arabia" href="question.html" data-tooltip="Saudi Arabia">
+      <span class="tooltip-text" data-placement="top">Saudi Arabia</span>
+  </a>
+  <a class="marker dropped-pin pakistan" href="question.html" data-tooltip="Pakistan">
+      <span class="tooltip-text" data-placement="top">Pakistan</span>
+  </a>
+  <a class="marker dropped-pin india" href="question.html" data-tooltip="India">
+      <span class="tooltip-text">India</span>
+  </a>
+  <a class="marker dropped-pin bangladesh" href="question.html" data-tooltip="Bangladesh">
+      <span class="tooltip-text">Bangladesh</span>
+  </a>
+    <a class="marker dropped-pin iraq" href="question.html" data-tooltip="Iraq">
+      <span class="tooltip-text">Iraq</span>
+  </a>
+
+</body>
+</html>

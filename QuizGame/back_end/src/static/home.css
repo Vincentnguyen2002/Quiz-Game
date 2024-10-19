@@ -1,0 +1,543 @@
+/* variables */
+:root {
+  --black: rgb(23, 23, 23);
+  --white: rgb(248, 246, 246);
+  --grey: rgb(128, 128, 128);
+  --dark-grey: rgb(57, 57, 57);
+}
+
+/* .body {
+  margin: 0;
+} */
+body {
+  margin: 0;
+}
+
+.menu {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: auto;
+}
+
+.logo {
+  width: 20%;
+}
+
+.quiz {
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  transition: color 0.3s ease-in-out;
+}
+
+.mini_logo {
+  width: 60%;
+  display: flex;
+}
+
+.descript {
+  font-size: 20px;
+  font-weight: bold;
+  width: 15%;
+  margin-top: 10%;
+  margin-left: 18%;
+}
+
+.three_logo {
+  display: flex;
+  /*justify-content: space-evenly;*/
+  width: 60%;
+  /*height: 50%;*/
+}
+
+.mini_logo img {
+  transform: scale(0.15);
+}
+
+.nav {
+  background-image: url("photo/nav3.jpg");
+  /* background-image: url("data:image/jpeg;base64,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"); */
+  /* background-repeat: no-repeat; */
+  /*linear-gradient(0, rgba(64, 148, 56,0.5), rgba(128,128,0,0.5));*/
+  /*padding-bottom: 2%;*/
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 10dvh;
+}
+
+.list_option {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  align-items: center;
+  /*text-align: center;*/
+  list-style-type: none;
+  font-size: 52px;
+  box-sizing: content-box;
+}
+
+.list_option a {
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+.form-login {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Đảm bảo form hiển thị trên video */
+}
+
+.video-login {
+  /*position: fixed;*/
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1; /* Đảm bảo video hiển thị dưới form */
+}
+
+/*.video-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*#background-video {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*}*/
+
+.form_label-login {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  /*    background: rgba( 255, 255, 255, 0.25 );*/
+  /*    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
+  /*    backdrop-filter: blur( 4px );*/
+  /*    -webkit-backdrop-filter: blur( 4px );*/
+  /*    border-radius: 10px;*/
+  /*    border: 1px solid rgba( 255, 255, 255, 0.18 );*/
+}
+
+.welcome-login {
+  position: relative;
+  left: 7%;
+  bottom: 150px;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.username-login {
+  position: relative;
+  bottom: 100px;
+  left: 30%;
+  font-size: 24px;
+}
+
+/*.password {*/
+/*    position: relative;*/
+/*    bottom: 55px;*/
+/*    left: 20.5%;*/
+
+/*}*/
+
+.login-button-login {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4caf50; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Không có đường viền */
+  border-radius: 5px; /* Góc bo tròn */
+  position: relative;
+  left: 46%;
+  bottom: 65px;
+}
+
+.login-button-login:hover {
+  background-color: #45a049; /* Màu nền khi hover */
+}
+
+/* home page */
+.video-container-home {
+  /* position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden; */
+}
+
+#background-video-home {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content-home {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  /* transform: translate(-50%, -50%); */
+  z-index: 1;
+  height: auto;
+  display: block;
+}
+.content-home img {
+  position: relative;
+  left: 55%;
+  bottom: 330px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.flash-message {
+  font-size: 2rem;
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.content-home {
+  font-size: 36px;
+  font-weight: bold;
+  color: lightsteelblue;
+  display: inline-block;
+  animation: wave 1s infinite;
+  z-index: 99;
+}
+
+/* .logout_button {
+  margin-top: 2rem; */
+/* box-sizing: content-box; */
+/* } */
+
+.logout-button a {
+  /* margin: 70px;*/
+  padding: 10px;
+  border: 5px solid red;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.logout-button a:hover {
+  background-color: rgb(178, 34, 34);
+  border: 5px solid rgb(178, 34, 34);
+}
+
+.list_option-home {
+  color: black;
+}
+
+.list_option-home li {
+  margin: 30px;
+  list-style: none;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+  /* z-index: 99; */
+}
+
+.play-button-home {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4caf50; /* Màu nền */
+  transition: background-color 0.3s;
+  color: white; /* Màu chữ */
+  border: none; /* Không có đường viền */
+  border-radius: 5px; /* Góc bo tròn */
+  position: relative;
+  left: 13%;
+  bottom: 180px;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.play-button-home:hover {
+  background-color: #45a049;
+}
+
+.container-map {
+  width: 100%;
+  /* position: relative; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  /* flex-grow: 1; */
+}
+
+#map {
+  /* position: absolute; */
+  /* top */
+  /* margin-left: auto; */
+  width: 85%;
+  height: 100dvh;
+  overflow: hidden;
+  /* z-index: -1; */
+}
+
+#map img {
+  width: 100%;
+  height: auto;
+  /* z-index: -1; */
+}
+
+.card {
+  margin-top: 1rem;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 80%;
+  color: black;
+  /* padding-left: 0.5rem;
+  padding-right: 1rem; */
+}
+
+/* .card {
+  background: url(photo/scroll.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+
+.player-info-container {
+  /* position: absolute; */
+  /* border: 5px solid black; */
+  /* border-radius: 5px; */
+  /* top: 1rem;
+  right: 1rem; */
+  /* z-index: 1; */
+  color: var(--white);
+  /* background-color: red; */
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 0.5;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  /* opacity: 0.2; */
+}
+
+.background-info img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.player-info-map {
+  position: relative;
+  width: 100%;
+
+  /* border: 5px solid black;
+  border-radius: 5px; */
+}
+
+.location-info-map {
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 2rem 0 2.5rem 0;
+}
+
+.player-text {
+  /* position: absolute;
+  z-index: 1; */
+  background-color: black;
+  /* opacity: 0.5; */
+}
+
+.status {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.opacity {
+  background: rgba(36, 36, 36, 0.55);
+}
+
+.popup-container {
+  text-align: center;
+}
+
+.log-out-container-home {
+  position: absolute;
+  top: 15rem;
+  left: 3rem;
+}
+
+/* .log-out-container {
+  position: abosolut
+  margin-top: 0.5rem;
+} */
+
+.player_info {
+  /* position: absolute; */
+  z-index: 1;
+}
+.player_info li {
+  color: white;
+  list-style: none;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.quiz-location {
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* .quiz-container {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  height: auto;
+  display: block;
+} */
+
+/* Thiết kế cho câu hỏi và đáp án */
+.question {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px;
+}
+
+/* Thiết kế cho nút kiểm tra câu trả lời */
+.check-answer {
+  position: relative;
+  top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: 2px solid #4caf50;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+.question_here {
+  position: relative;
+  bottom: 8px;
+}
+/* Hiệu ứng hover khi di chuột vào nút */
+.check-answer:hover {
+  background-color: #45a049;
+}
+/* for about page */
+.para-about {
+  width: 40%;
+  height: auto;
+  margin-left: 30px;
+  font-size: 55px;
+  color: green;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+.rule-about {
+  color: green;
+  font-size: 35px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /*font-weight: bold;*/
+}
+.rule-about {
+  margin: 30px;
+}
+
+.img-about {
+  width: 70%;
+  border-radius: 50px;
+  margin-right: 30px;
+}
+
+.finish {
+  text-align: center;
+}
+
+.play-button {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4caf50; /* Màu nền */
+  transition: background-color 0.3s;
+  color: white; /* Màu chữ */
+  border: none; /* Không có đường viền */
+  border-radius: 5px; /* Góc bo tròn */
+  margin-bottom: 1rem;
+  /* position: relative;
+  left: 13%;
+  bottom: 180px; */
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player information</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet">
+
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+<nav class="nav">
+    <ul class="list_option">
+        <li class="item"><a href="{{ url_for("home") }}" style="text-decoration: none"> 🏠 </a></li>
+        <li class="item"><a href="{{ url_for("worldmap") }}" style="text-decoration: none"> 🗺️ </a></li>
+        <!-- <li class="item"><a href="{{ url_for("worldmap") }}" style="text-decoration: none"> 💬 </a></li> -->
+        <li class="item"><a href="{{ url_for("about") }}" style="text-decoration: none"> 📜 </a></li>
+    </ul>
+
+</nav>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class="flash-message">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endwith %}
+
+{% block index %}
+
+{% endblock %}
+</body>
+</html>

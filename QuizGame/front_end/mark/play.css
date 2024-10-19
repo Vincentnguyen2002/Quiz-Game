@@ -1,0 +1,49 @@
+/* Set full screen */
+
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  position: relative; /* Needed for absolute positioning of markers */
+  background-image: url("IMAGES/map.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#map-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: right;
+}
+.marker {
+  position: absolute;
+  width: 10px; /* Adjust size of markers */
+  height: 10px;
+  border-radius: 50%; /* Make markers circular */
+  background-color: red; /* Marker color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Adjust marker positions */
+.marker.north-america {
+  top: 50%;
+  left: 50%;
+}
+
+.marker.europe {
+  top: 15%;
+  left: 50%;
+}
+/* Add more markers and adjust classes/positions as needed */

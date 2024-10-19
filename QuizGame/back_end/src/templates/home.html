@@ -1,0 +1,37 @@
+{% extends "index_layout.html" %}
+
+{% block index %}
+<main class="main">
+  <div class="video-container-home">
+    <video autoplay muted loop id="background-video-home">
+        <source src="https://cdn.pixabay.com/vimeo/540486885/cay-71862.mp4?width=640&hash=a82b5016fab2d4eb880bc6872c064844a68d767b"
+                type="video/mp4">
+  
+    </video>
+    <div class="log-out-container-home">
+      <p class="logout-button">
+        <a href="{{ url_for("logout") }}">Log Out</a>
+    
+      </p>
+
+    </div>
+    <div class="content-home">
+      <div class="list_option-container">
+        
+        <ul class="list_option-home">
+            <li class="item">Username: {{ player[1] }}</li>
+            <li class="item">Point: {{ quiz_session[3] }}</li>
+            <li class="item">Answered question: {{ quiz_session[2] }} </li>
+            <li class="item">Correct rate: {{ correct_rate }}% </li>
+            <li class="item">Chances: {{ quiz_session[4] }}/3 </li>
+        </ul>
+      </div>
+      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxL3APRUSYSew4EaM1x83bovZK_MFKdf2aBQ&usqp=CAU" alt="img_cute"> -->
+      <img src="/static/photo/globe-teacher.jpg" alt="globe teacher">
+      <form action="#" method="post">
+        <button type="submit" class="play-button-home">Play Game </button>
+    </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

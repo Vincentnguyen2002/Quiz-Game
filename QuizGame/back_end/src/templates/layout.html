@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+<div class="page_container">
+    <header class="menu">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSizV4inC8yMZ4eKt1Gd2LfQ5RseblvFbu24Ev0iSU6a17N8-GTBs9X4gvGKxWhP6vYFuI&usqp=CAU"
+                 alt="environment_logo">
+
+        </div>
+
+        <div class="quiz">
+            <h1 class="quiz">Environmental Quiz 🌱🌴☘️</h1>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul class="list_option">
+            <li class="item"><a href="{{ url_for("home" )}}" style="text-decoration: none"> 🏠 </a></li>
+            <li class="item"><a href="{{ url_for("worldmap" )}}" style="text-decoration: none"> 🗺️ </a></li>
+            <!-- <li class="item"><a href="{{ url_for("worldmap" )}}" style="text-decoration: none"> 💬 </a></li> -->
+            <li class="item"><a href="{{ url_for("about")}}" style="text-decoration: none"> 📜 </a></li>
+        </ul>
+
+    </nav>
+  {% block body %}
+  {% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the header */
+.header {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Style for the header content */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  align-content: center;
+}
+
+/* Style for the logo */
+header img {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+/* Style for the navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+/* Style for the logout button */
+.logout img {
+  height: 40px; /* Adjust height as needed */
+}
+
+

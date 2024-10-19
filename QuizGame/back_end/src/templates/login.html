@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+    <main class="total_background">
+
+        <form action="#" class="form-login" method="post">
+            <h1 class="welcome-login">Welcome to Clean World !!!</h1>
+            <div class="username-login" >
+                <label class="form_label-login" for="name">Username :</label>
+                <input class="form_input" type="text" id="name" name = "username"
+                 required autofocus autocomplete="off" placeholder="Type username">
+            </div>
+            <button type="submit" class="login-button-login">Login</button>
+        </form>
+        <div class="background_img">
+            <video class="video-login" autoplay loop>
+                <source src="https://cdn.pixabay.com/vimeo/359604154/tre-em-26796.mp4?width=1280&hash=ed709d2e73fc646eff609bc93172dea935e5f677"
+                        type="video/mp4">
+
+            </video>
+
+        </div>
+    </main>
+{% endblock %}

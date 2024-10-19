@@ -1,0 +1,235 @@
+/* Set full screen */
+body, html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  position: relative; /* Needed for absolute positioning of markers */
+  background-image: url("photos/map3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#map-container {
+  position: fixed; /* Position the map container */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#map-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+/* Media query for smaller screens (adjust map size or styles as needed) */
+@media (max-width: 768px) {
+  #map-container {
+    /* Adjust map container styles for smaller screens */
+  }
+}
+
+/* Media query for even smaller screens (adjust map size or styles as needed) */
+@media (max-width: 480px) {
+  #map-container {
+    /* Adjust map container styles for even smaller screens */
+  }
+}
+
+/* Add more media queries or adjust map styles based on different screen sizes */
+
+header {
+  text-align: center;
+  padding: 20px;
+
+}
+
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the header */
+.header {
+  background-color: ghostwhite;
+  padding: 10px;
+}
+
+/* Style for the header content */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  align-content: center;
+}
+
+/* Style for the logo */
+header img {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+.stats-placeholder {
+  text-align: left;
+}
+
+
+/* Style for the navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+/* Style for the logout button */
+.logout img {
+  height: 40px; /* Adjust height as needed */
+}
+
+
+/* Marker styles */
+.marker {
+  position: absolute;
+  width: 40px; /* Marker width */
+  height: 40px; /* Marker height */
+  background-color: transparent; /* Transparent background for icon */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Icon size */
+  color: #ff0000; /* Icon color */
+  text-decoration: none;
+}
+
+/* Dropped pin icon */
+.marker.dropped-pin::before {
+  content: 'place'; /* Material Icons name for pin icon */
+  font-family: 'Material Icons'; /* Material Icons font */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Marker positions for different screen sizes */
+/* Default position */
+.marker.saudi-arabia {
+  top: 50%;
+  left: 64%;
+  transform: translateX(-50%)
+}
+
+.marker.pakistan {
+  top: 44%;
+  left: 71.5%;
+  transform: translateX(-50%);
+}
+
+.marker.india {
+  top: 50%;
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+.marker.bangladesh {
+  top: 46%;
+  left: 79%;
+  transform: translateX(-50%);
+}
+
+.marker.iraq {
+  top: 42%;
+  left: 64%;
+  transform: translateX(-50%);
+}
+/* Your existing CSS styles for markers */
+
+/* Tooltip styles */
+.tooltip-text {
+  visibility: hidden;
+  width: 135px;
+  background-color: #45a049;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%; /* Position the tooltip above the marker */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.marker:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* Media query for smaller screens (adjust positions as needed) */
+@media (max-width: 768px) {
+  .marker.saudi-arabia {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .marker.pakistan {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .marker.india {
+    top: 50%;
+    left: 75%;
+    transform: translateX(-50%);
+    }
+
+  .marker.bangladesh {
+    top: 46%;
+    left: 79%;
+    transform: translateX(-50%);
+  }
+
+  .marker.iraq {
+    top: 42%;
+    left: 64%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Media query for even smaller screens (adjust positions as needed) */
+@media (max-width: 480px) {
+  .marker.saudi-arabia {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .marker.pakistan {
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .marker.india {
+  top: 50%;
+  left: 75%;
+  transform: translateX(-50%);
+  }
+}
+
+/* Add more media queries or adjust positions based on different screen sizes */
+
